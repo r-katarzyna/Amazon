@@ -18,5 +18,12 @@ test('As a user, I want to sign in.', async ({page}) => {
   await page.click(signInPage.continueBtn);
   await page.click(signInPage.proceedBtn);
   await page.fill(signInPage.nameInput, credentials.name);
+  await page.fill(signInPage.passwordInput, credentials.password);
+  await page.fill(signInPage.passwordCheckInput, credentials.password);
+  await page.click(signInPage.continueBtn);
+  await page.waitForTimeout(20000);
+  await page.fill(signInPage.securityCodeInput, credentials.securityCode);
+  //Solve this puzzle to protect your account//
+  //Gmail API GET latest email with veryfication code//
 
 });
