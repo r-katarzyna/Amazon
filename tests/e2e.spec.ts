@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { credentials } from './testData';
-import { mainPageElements, signInPage, accountMenu } from './locators';
+import { credentials, search } from './testData';
+import { mainPageElements, signInPage, accountMenu, searchPage } from './locators';
 
 
 test.beforeEach('As a user, I want to enter Amazon webpage', async ({ page }) => { 
@@ -27,3 +27,13 @@ test('As a user, I want to sign in.', async ({page}) => {
   //Gmail API GET latest email with veryfication code//
 
 });
+
+
+test('As a user I want to buy christmas tree', async ({page}) => {
+
+  await page.fill(mainPageElements.searchInput, search.christmasTree);
+  await page.click(mainPageElements.searchBtn);
+  await page.click(searchPage.sortBySelector);
+  //Nie chce się kliknąć//
+
+})

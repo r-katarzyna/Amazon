@@ -6,3 +6,7 @@ export const credentials = {
     password : "PapierKamien!1",
     securityCode : "303984",
 };
+
+export const search = {
+    christmasTree : "christmas tree",
+};
